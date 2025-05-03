@@ -21,6 +21,13 @@
     padding: 2rem;
     gap: 2rem;
   }
+
+  #title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
   
   #title-section {
     background-color: #151515;
@@ -50,13 +57,15 @@
     margin-top: 1rem;
     font-family: monospace;
     color: #bbbb00;
-    background-color: #111;
+    background-color: #111111;
     padding: 1rem;
     border: 2px solid #bbbb00;
     font-size: 1em;
   }
   
   #title-selfie-figure {
+    margin: 0;
+    align-self: flex-start;
     position: relative;
   }
   
