@@ -1,49 +1,86 @@
 @font-face {
     font-family: "CodenameCoderFree4F-Bold";
     src: url("fonts/CodenameCoderFree4F-Bold.ttf") format("truetype");
-}
-
-* {
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
     background-color: #252525;
-    font-family: "CodenameCoderFree4F-Bold";
-}
-
-#title-section * {
-    background-color: #151515;
+    font-family: "CodenameCoderFree4F-Bold", monospace;
     color: #5315fd;
-}
-
-#title-section {
-    width: 600px;
-    height: 300px;
+    background-image: url("assets/glitch-bg.jpg"); /* optional, add if u want */
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  #container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  #title-section {
     background-color: #151515;
-    margin: 0px;
-    padding-left: 3%;
-    padding-top: 1px;
+    padding: 2rem;
     outline: 3px solid #5315fd;
-}
-
-#title-section h1 {
+    max-width: 600px;
+    width: 600px;
+  }
+  
+  #title-section h1 {
     font-size: 3em;
-}
-
-#title-section p {
-    font-size: 1.2em;
-}
-
-#title-selfie-figure {
+    margin: 0;
     position: relative;
-    float: right;
-    margin-right: 0px;
-}
+    transition: text-shadow 0.2s ease;
+  }
 
-#title-selfie {
+  #change-text span {
+    transition: color 0.3s ease;
+  }
+  
+  #title-section p {
+    font-size: 1.2em;
+    margin-top: 0.5rem;
+  }
+  
+  #terminal {
+    margin-top: 1rem;
+    font-family: monospace;
+    color: #bbbb00;
+    background-color: #111;
+    padding: 1rem;
+    border: 2px solid #bbbb00;
+    font-size: 1em;
+  }
+  
+  #title-selfie-figure {
+    position: relative;
+  }
+  
+  #title-selfie {
     background-color: #151515;
     outline: 3px solid #5315fd;
     display: block;
-}
-
-#title-selfie-figure figcaption {
+    max-width: 350px;
+    filter: grayscale(100%) contrast(120%);
+    transition: filter 0.3s ease;
+  }
+  
+  #title-selfie:hover {
+    filter: none;
+    animation: shake 0.2s infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(1px, -1px) rotate(0.5deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+  }
+  
+  #title-selfie-figure figcaption {
     position: absolute;
     bottom: 7px;
     left: 7px;
@@ -52,4 +89,30 @@
     padding: 3px;
     font-size: 1.2em;
     border-radius: 3px;
-}
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @media screen and (max-width: 768px) {
+    #container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #title-section, #title-selfie-figure {
+      width: 90%;
+    }
+  
+    #title-selfie {
+      width: 100%;
+    }
+  }
+  
