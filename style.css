@@ -225,7 +225,7 @@ body {
 }
 
 #music-player-wrapper {
-  width: 330px;
+  width: 450px;
   padding: 1rem;
   background-color: #151515;
   border: 3px solid #5315fd;
@@ -238,10 +238,26 @@ body {
   align-items: center;
 }
 
+#music-player-info {
+  margin-bottom: 10px;
+}
+
+#song-title {
+  font-size: 24px;
+  margin: 15px;
+  text-align: center;
+}
+
+#song-description {
+  font-size: 16px;
+  color: #bbbb00;
+  margin: 5px;
+  text-align: center;
+}
+
 #music-controls {
   display: flex;
   align-items: center;
-  width: 100%;
   margin-top: 10px;
   justify-content: space-between;
 }
@@ -260,12 +276,17 @@ body {
 }
 
 #progress-bar {
-  width: 40%;
+  width: 25%;
   margin: 0 10px;
 }
 
 #current-time, #duration {
   color: #bbbb00;
+  width: 40px;
+}
+
+#volume-control {
+  width: 25%;
 }
 
 @media screen and (max-width: 768px) {

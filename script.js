@@ -21,6 +21,7 @@ const playbutton = document.getElementById("play-btn");
 const progressBar = document.getElementById("progress-bar");
 const currentTimeDisplay = document.getElementById("current-time");
 const durationDisplay = document.getElementById("duration");
+const volumeControl = document.getElementById("volume-control");
 
 let isPlaying = false;
 
@@ -56,6 +57,10 @@ audioPlayer.addEventListener("timeupdate", () => {
 progressBar.addEventListener("input", () => {
     const seekTime = (progressBar.value / 100) * audioPlayer.duration;
     audioPlayer.currentTime = seekTime;
+});
+
+volumeControl.addEventListener("input", () => {
+    audioPlayer.volume = volumeControl.value;
 });
 
 window.addEventListener("load", () => {
