@@ -11,10 +11,20 @@
                 <section id="title-section">
                 <h1 id="change-text"><span>go away</span></h1>
                 <p>this is my site, get out now</p>
-                <pre id="terminal">
+<pre id="terminal">
 > initializing...
 > target: worker drone
-> status: eliminated.</pre>
+> status: eliminated.
+> cause: spinal dislocation
+> mission: 98% complete
+> detected: unknown AI signature
+> response: suppress with extreme prejudice
+> ...
+> awaiting further orders...
+>
+>
+> <span id="cursor">_</span>
+</pre>
             </section>
 
             <figure id="title-selfie-figure">
@@ -28,7 +38,7 @@
         <script>
             const span = document.querySelector("#change-text span");
                 
-                pan.addEventListener("mouseover", () => {
+            span.addEventListener("mouseover", () => {
                 span.textContent = "fine. stay. whatever."
                 span.style.color = '#bbbb00'
             })
