@@ -175,12 +175,6 @@ body {
   width: 0;
 }
 
-@keyframes blink-caret {
-  50% {
-    visibility: hidden;
-  }
-}
-
 #title-selfie-figure {
   margin: 0;
   align-self: flex-start;
@@ -222,6 +216,166 @@ body {
   padding: 3px;
   font-size: 1.2em;
   border-radius: 3px;
+}
+
+#interactive-terminal-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+#interactive-terminal {
+  background-color: #111111;
+  border: 2px solid #5315fd;
+  box-shadow: inset 0 0 14px #5315fdaa;
+  color: #5315fd;
+  font-family: monospace;
+  padding: 1rem;
+  width: 600px;
+  height: 300px;
+  overflow-y: auto;
+  position: relative;
+  line-height: 1.5em;
+  scrollbar-width: thin;
+  scrollbar-color: #5315fd #151515;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#interactive-terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  z-index: 2;
+  animation: flicker 0.15s infinite;
+}
+
+#interactive-terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+#interactive-terminal::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+#interactive-terminal::-webkit-scrollbar-thumb {
+  background-color: #5315fd;
+  border-radius: 4px;
+}
+
+#terminal-output {
+  width: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+  white-space: pre-wrap;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+#terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-top: 0.5rem;
+}
+
+.prompt {
+  margin-right: 0.5rem;
+}
+
+#terminal-input {
+  background: none;
+  border: none;
+  color: #5315fd;
+  font-family: monospace;
+  font-size: 1em;
+  outline: none;
+  width: 100%;
+  flex: 1;
+  padding: 0;
+}
+
+#fake-terminals-container {
+  display: grid;
+  grid-template-areas:
+    "term1 ."
+    ". term2"
+    "term3 .";
+  gap: 3rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+}
+
+#fake-terminal-1 { grid-area: term1;}
+#fake-terminal-2 { grid-area: term2;}
+#fake-terminal-3 { grid-area: term3;}
+
+.fake-terminal {
+  background-color: #111111;
+  color: #bbbb00;
+  font-family: monospace;
+  font-size: 1em;
+  padding-left: 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: 2px solid #bbbb00;
+  box-shadow: inset 0 0 14px #bbbb00aa;
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  max-width: 400px;
+  scale: 1.5;
+}
+
+.fake-terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  z-index: 2;
+  animation: flicker 0.15s infinite;
+}
+
+#fake-terminal-1 {
+  top: 47%;
+  left: 6%;
+  width: 350px;
+}
+
+#fake-terminal-2 {
+  top: 55%;
+  right: 7%;
+  width: 300px;
+}
+
+#fake-terminal-3 {
+  bottom: 8%;
+  left: 40%;
+  width: 400px;
 }
 
 #music-player-wrapper {

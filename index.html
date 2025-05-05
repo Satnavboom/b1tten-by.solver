@@ -48,6 +48,55 @@
             </div>
         </div>
 
+        <section id="interactive-terminal-wrapper">
+            <div id="interactive-terminal" class="terminal-box">
+                <div id="terminal-output"></div>
+                <div id="terminal-input-line">
+                    <span class="prompt">></span>
+                    <input type="text" id="terminal-input" autocomplete="off" />
+                </div>
+            </div>
+        </section>
+
+        <div id="fake-terminals-container">
+            <div class="fake-terminal" id="fake-terminal-1">
+                <pre>
+> connecting to network...
+> connection established
+> retrieving data...15%...60%...99%...
+> error: data corrupted
+> 
+> 
+>  <span id="cursor">_</span>
+</pre>
+            </div>
+
+            <div class="fake-terminal" id="fake-terminal-2">
+                <pre>
+> access granted
+> scanning target...
+> location: ████
+> status: active
+> threat level: high
+> 
+> 
+>  <span id="cursor">_</span>
+</pre>
+            </div>
+
+            <div class="fake-terminal" id="fake-terminal-3">
+                <pre>
+> initializing system...
+> system online
+> loading subroutines...38%...67%...82%...
+> error: critical failure
+> 
+> 
+>  <span id="cursor">_</span>
+</pre>
+            </div>
+        </div>
+
         <audio id="bgm" loop autoplay>
             <source src="assets/bgm.mp3" type="audio/mp3">
             your stupid browser doesn't support audio, fix it now
