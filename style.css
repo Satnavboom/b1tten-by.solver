@@ -457,4 +457,8 @@ body {
   #title-selfie {
       width: 100%;
   }
+
+  .fake-terminal {
+    scale: 1;
+  }
 }
